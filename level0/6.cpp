@@ -1,0 +1,8 @@
+<
+stdio
+.
+h
+>
+
+int main() {
+}
