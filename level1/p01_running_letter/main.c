@@ -10,6 +10,7 @@ int main(void) {
     int len=(int)strlen(word);
     while (1) {
         system("cls");
+        Sleep(200);
         for (int i = 0; i < pos; i++) {
             putchar(' ');
         }
