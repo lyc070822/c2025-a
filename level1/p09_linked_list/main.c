@@ -48,7 +48,7 @@ int findFirstFive(Node* head) {
     return sNumber;
 }
 int findSecondFive(Node* head) {
-    int sNumber=1;
+    int sNumber=0;
     int n=0;
     while (1) {
         if (head->data==5) {
