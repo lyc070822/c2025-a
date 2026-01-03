@@ -39,6 +39,7 @@ void reverseList(Node** head) {
     }
     *head=pre;
 }
+
 int findFirstFive(Node* head) {
     int sNumber=1;
     while (head->data!=5) {

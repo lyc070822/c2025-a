@@ -1,30 +1,49 @@
-cmake_minimum_required(VERSION 4.0)
+cmake_minimum_required(VERSION 3.20)
 project(c2025_challenge)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
-
 add_executable(p01_running_letter level1/p01_running_letter/main.c
-)
+        level2/SkipList/skiplist.c)
 
-add_executable(p02_is_prime  level1/p02_is_prime/main.c)
+add_executable(p02_is_prime level1/p02_is_prime/main.c)
 
-add_executable(p03_all_primes  level1/p03_all_primes/main.c)
+add_executable(p03_all_primes level1/p03_all_primes/main.c)
 
-add_executable(p04_goldbach  level1/p04_goldbach/main.c)
+add_executable(p04_goldbach level1/p04_goldbach/main.c)
 
-add_executable(p05_encrypt_decrypt  level1/p05_encrypt_decrypt/main.c)
+add_executable(p05_encrypt_decrypt level1/p05_encrypt_decrypt/main.c)
 
-add_executable(p06_hanoi  level1/p06_hanoi/main.c
+add_executable(p06_hanoi level1/p06_hanoi/main.c
         level1/p06_hanoi/hanoi.c)
 
-add_executable(p07_maze  level1/p07_maze/main.c)
+add_executable(p07_maze level1/p07_maze/main.c)
 
-add_executable(p08_push_boxes  level1/p08_push_boxes/main.c)
+add_executable(p08_push_boxes level1/p08_push_boxes/main.c)
 file(GLOB LEVEL_FILES "${CMAKE_SOURCE_DIR}/p08_push_boxes/level*.txt")
 file(COPY ${LEVEL_FILES} DESTINATION ${CMAKE_BINARY_DIR})
 
 
-add_executable(p09_linked_list  level1/p09_linked_list/main.c)
+add_executable(p09_linked_list level1/p09_linked_list/main.c)
 
-add_executable(p10_warehouse  level1/p10_warehouse/main.c)
+add_executable(p10_warehouse level1/p10_warehouse/main.c)
+
+set(RAYLIB_INCLUDE_PATH "C:/Users/dtrli/Downloads/include")
+set(RAYLIB_LIB_PATH     "C:/Users/dtrli/Downloads/lib")
+
+set(SOURCE_FILES
+        curriculum_design/main.cpp
+        curriculum_design/src/Board.cpp
+        curriculum_design/src/AI.cpp
+        curriculum_design/src/Game.cpp
+)
+
+add_executable(GobangAI ${SOURCE_FILES})
+target_include_directories(GobangAI PUBLIC ${RAYLIB_INCLUDE_PATH})
+
+target_link_directories(GobangAI PUBLIC ${RAYLIB_LIB_PATH})
+
+target_link_libraries(GobangAI PUBLIC
+        raylib
+        opengl32 gdi32 winmm
+)

@@ -2,7 +2,7 @@
 # ：墙
 @ ：玩家 Man
 $ ：箱子 Box
-. ：箱子目标位置 Target
+. ：箱子目标位置 Targets\
 */
 #include <stdio.h>
 #include <windows.h>
